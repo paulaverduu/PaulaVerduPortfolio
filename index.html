@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es" class="is-loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paula Verdú Carbonell — Diseñadora gráfica</title>
+  <meta name="description" content="Portfolio de Paula Verdú Carbonell, diseñadora gráfica en Almería: identidad de marca, tipografía, packaging, collage editorial y grabado.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Shrikhand&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=1795029619">
+  <link rel="preload" as="image" href="assets/firma.png">
+  <noscript><style>.loader { display: none; } html.is-loading { overflow: auto; }</style></noscript>
+  <script>try{if(localStorage.getItem("pv-mode")==="night")document.documentElement.classList.add("is-night")}catch(e){}</script>
+</head>
+<body>
+
+  <!-- ============ PANTALLA DE CARGA ============ -->
+  <div class="loader" data-loader aria-hidden="true">
+    <div class="loader__logo">
+      <img class="loader__ghost" src="assets/firma.png" alt="" width="225" height="128">
+      <span class="loader__fill" data-loader-fill><img src="assets/firma.png" alt="" width="225" height="128"></span>
+    </div>
+    <p class="loader__corner loader__corner--l">Paula Verdú Carbonell<br>Portfolio 2026</p>
+    <p class="loader__corner loader__corner--r"><span data-loader-num>000</span>%</p>
+  </div>
+
+  <!-- Filtros SVG: efecto "tinta que tiembla" para las palabras manuscritas -->
+  <svg class="sr-only" aria-hidden="true" focusable="false">
+    <filter id="boil-1"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="2"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+    <filter id="boil-2"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+    <filter id="boil-3"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="17"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+  </svg>
+
+  <a class="skip-link" href="#sobre-mi">Saltar al contenido</a>
+
+  <!-- ============ NAVEGACIÓN ============ -->
+  <header class="nav" data-nav data-hide="0">
+    <a class="nav__brand" href="#inicio" aria-label="Paula Verdú Carbonell, volver al inicio">
+      <img class="nav__firma" src="assets/firma.png" alt="" width="225" height="128">
+      <span class="nav__name">Paula Verdú<sup>™</sup></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a class="nav__link" href="#sobre-mi" data-link="sobre-mi">Sobre mí</a>
+      <a class="nav__link" href="#cubos" data-link="cubos">Proyectos</a>
+      <a class="nav__link" href="#contacto" data-link="contacto">Contacto</a>
+    </nav>
+
+    <button class="mode nav__mode" type="button" role="switch" aria-checked="false" aria-label="Cambiar el color de fondo" data-mode><span class="mode__knob"></span></button>
+
+    <a class="nav__cta" href="#contacto">Escríbeme <span aria-hidden="true">↗</span></a>
+
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú" data-menu-toggle>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Cursor: bola metálica + aro (ref. twohalves.co) -->
+  <div class="cur" data-cur data-on="0" data-hot="0" data-down="0" aria-hidden="true">
+    <div class="cur-ring" data-cur-ring><i></i></div>
+    <div class="cur-dot" data-cur-dot><i></i><b data-cur-label></b></div>
+  </div>
+  <!-- Rastro de sombra y ondas del cursor -->
+  <canvas class="water" data-water aria-hidden="true"></canvas>
+  <!-- Línea de puntos que se dibuja al hacer scroll -->
+  <canvas class="flight" data-flight aria-hidden="true"></canvas>
+
+  <!-- Menú a pantalla completa (móvil) -->
+  <div class="menu" id="menu" data-menu hidden>
+    <nav class="menu__links" aria-label="Menú">
+      <a href="#sobre-mi"><span class="menu__num">(01)</span>Sobre mí</a>
+      <a href="#cubos"><span class="menu__num">(02)</span>Proyectos</a>
+      <a href="#contacto"><span class="menu__num">(03)</span>Contacto</a>
+    </nav>
+    <p class="menu__foot">
+      <a href="#" data-contact-mail data-contact-text></a>
+    </p>
+  </div>
+
+  <main>
+    <!-- ============ INICIO / HERO ============ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title" data-hero>
+      <!-- Escena fija: al hacer scroll los objetos cambian de composición (ref. Josh Kern) -->
+      <div class="hero__stage">
+
+        <h1 class="hero__title" id="hero-title">
+          Hola, soy Paula y
+          <span class="ink" data-boil>
+            diseño
+            <svg class="ink__scribble" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c30-7 62-9 96-6 26 2 50 0 98-5"/></svg>
+          </span>
+          cosas que se pueden tocar :)
+        </h1>
+
+        <!-- Objetos arrastrables -->
+        <div class="board" data-board>
+          <figure class="obj" style="--mx:21%; --my:27%; --x:13%; --y:29%; --w:16; --r:-6deg; --i:0" tabindex="0" data-obj>
+            <img src="assets/objects/smiths.webp" alt="Disco The Queen Is Dead de The Smiths" width="800" height="799" draggable="false">
+            <figcaption>The Queen Is Dead</figcaption>
+          </figure>
+          <figure class="obj" style="--mx:62%; --my:14%; --x:40%; --y:15%; --w:19; --r:4deg; --i:1" tabindex="0" data-obj>
+            <img src="assets/objects/gafas.webp" alt="Gafas de sol negras con estrella plateada" width="714" height="288" draggable="false">
+            <figcaption>Gafas de estrella</figcaption>
+          </figure>
+          <figure class="obj obj--desk" style="--x:65%; --y:18%; --w:13; --r:-9deg; --i:2" tabindex="0" data-obj>
+            <img src="assets/objects/lirio.webp" alt="Lirio granate" width="504" height="477" draggable="false">
+            <figcaption>Lirio</figcaption>
+          </figure>
+          <figure class="obj" style="--mx:85%; --my:31%; --x:87%; --y:27%; --w:9; --r:8deg; --i:3" tabindex="0" data-obj>
+            <img src="assets/objects/tabaco.webp" alt="Paquete de tabaco abierto" width="249" height="384" draggable="false">
+            <figcaption>Paquete</figcaption>
+          </figure>
+          <figure class="obj" style="--mx:20%; --my:75%; --x:13%; --y:74%; --w:14.5; --r:5deg; --i:4" tabindex="0" data-obj>
+            <img src="assets/objects/zapatillas.webp" alt="Zapatillas de ante rojas" width="555" height="747" draggable="false">
+            <figcaption>Zapatillas</figcaption>
+          </figure>
+          <figure class="obj" style="--mx:44%; --my:64%; --x:30%; --y:77%; --w:7.1; --min:34px; --r:-12deg; --i:5" tabindex="0" data-obj>
+            <img src="assets/objects/colilla-1.webp" alt="Colilla" width="370" height="93" draggable="false">
+            <figcaption>Colilla</figcaption>
+          </figure>
+          <figure class="obj obj--desk" style="--x:39%; --y:89%; --w:5.8; --min:34px; --r:18deg; --i:6" tabindex="0" data-obj>
+            <img src="assets/objects/colilla-2.webp" alt="Colilla" width="304" height="96" draggable="false">
+            <figcaption>Colilla</figcaption>
+          </figure>
+          <figure class="obj obj--desk" style="--x:19%; --y:50%; --w:3.5; --min:34px; --r:34deg; --i:7" tabindex="0" data-obj>
+            <img src="assets/objects/colilla-3.webp" alt="Colilla quemada" width="183" height="83" draggable="false">
+            <figcaption>Colilla</figcaption>
+          </figure>
+          <figure class="obj obj--desk" style="--x:42%; --y:70%; --w:7.6; --min:34px; --r:-5deg; --i:8" tabindex="0" data-obj>
+            <img src="assets/objects/colilla-4.webp" alt="Colilla doblada" width="399" height="114" draggable="false">
+            <figcaption>Colilla</figcaption>
+          </figure>
+          <figure class="obj" style="--mx:14%; --my:52%; --x:83%; --y:47%; --w:4.5; --min:34px; --r:62deg; --i:9" tabindex="0" data-obj>
+            <img src="assets/objects/colilla-5.webp" alt="Colilla" width="236" height="88" draggable="false">
+            <figcaption>Colilla</figcaption>
+          </figure>
+          <figure class="obj obj--desk" style="--x:64%; --y:91%; --w:9.5; --min:34px; --r:-14deg; --i:10" tabindex="0" data-obj>
+            <img src="assets/objects/colilla-6.webp" alt="Colilla larga" width="497" height="97" draggable="false">
+            <figcaption>Colilla</figcaption>
+          </figure>
+          <figure class="obj" style="--mx:50%; --my:85%; --x:53%; --y:80%; --w:10; --r:3deg; --i:11" tabindex="0" data-obj>
+            <img src="assets/objects/martini.webp" alt="Copa de dry martini con aceituna" width="566" height="795" draggable="false">
+            <figcaption>Dry martini</figcaption>
+          </figure>
+          <figure class="obj" style="--mx:80%; --my:73%; --x:73%; --y:79%; --w:15; --r:-6deg; --i:12" tabindex="0" data-obj>
+            <img src="assets/objects/flor.webp" alt="Flor naranja moteada" width="775" height="657" draggable="false">
+            <figcaption>Flor</figcaption>
+          </figure>
+          <figure class="obj obj--desk" style="--x:90%; --y:62%; --w:12; --r:10deg; --i:13" tabindex="0" data-obj>
+            <img src="assets/objects/orquidea.webp" alt="Orquídea rosa y naranja" width="652" height="613" draggable="false">
+            <figcaption>Orquídea</figcaption>
+          </figure>
+        </div>
+
+        <!-- Esquinas inferiores (estilo Igor) -->
+        <p class="hero__corner hero__corner--left">
+          <span aria-hidden="true">( ↗ )</span> Disponible para prácticas<br>
+          <span data-month>Noviembre 2026</span>
+        </p>
+        <p class="hero__corner hero__corner--right">
+          Arrastra los objetos<br>
+          <a href="#sobre-mi">Desliza ↓</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ (ref. ficha de diseñador: datos en columnas + foto) ============ -->
+    <section class="me" id="sobre-mi" aria-labelledby="me-title">
+      <dl class="me__cols">
+        <div data-reveal><dt>Nombre:</dt><dd>Paula Verdú Carbonell</dd></div>
+        <div data-reveal><dt>Ocupación:</dt><dd>Diseñadora gráfica</dd></div>
+        <div data-reveal><dt>Ubicación:</dt><dd>Almería, España</dd></div>
+        <div data-reveal><dt>Conectar:</dt><dd>
+          <button class="me__link" type="button" data-copy-mail>Copiar email</button>
+          <a class="me__link" href="#" data-contact-ig hidden>Instagram</a>
+          <a class="me__link" href="#contacto">Contacto</a>
+        </dd></div>
+        <div data-reveal><dt>Navegación:</dt><dd>
+          <a class="me__link" href="#inicio">Inicio</a>
+          <a class="me__link" href="#cubos">Proyectos</a>
+        </dd></div>
+      </dl>
+
+      <div class="me__body">
+        <h2 class="me__title s-title" id="me-title" data-reveal>Diseñadora gráfica creando identidades con <span class="ink" data-boil data-reveal>carácter<svg class="ink__scribble" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c30-7 62-9 96-6 26 2 50 0 98-5"/></svg></span> a través de la tipografía, el packaging y el collage editorial.</h2>
+        <figure class="me__photo" data-reveal>
+          <img src="assets/paula.webp" alt="Paula de espaldas mirando un cuadro de flores en un museo" width="390" height="679" loading="lazy">
+        </figure>
+      </div>
+
+      <p class="me__note" data-reveal>Echa un vistazo a mis proyectos más abajo para ver en qué he estado trabajando. Busco prácticas de empresa y estoy abierta a nuevas ideas y colaboraciones, así que escríbeme cuando quieras.</p>
+      <p class="me__toast th-mono" data-copy-toast aria-live="polite"></p>
+    </section>
+
+    <!-- ============ CUBOS 3D (ref. twohalves.co "Selected work.") ============ -->
+    <section class="cubes" id="cubos" aria-labelledby="cubes-title" data-cubes>
+      <div class="cubes__pin">
+        <h2 class="cubes__title s-title" id="cubes-title">Mis proyectos, <span class="ink" data-boil data-reveal>en cubos<svg class="ink__scribble" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c30-7 62-9 96-6 26 2 50 0 98-5"/></svg></span> :)</h2>
+        <svg class="cubes__orbit" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+          <ellipse cx="500" cy="250" rx="440" ry="190"/>
+          <ellipse cx="500" cy="250" rx="430" ry="200" transform="rotate(3 500 250)"/>
+          <ellipse cx="500" cy="250" rx="450" ry="180" transform="rotate(-2.5 500 250)"/>
+          <ellipse cx="500" cy="250" rx="300" ry="120"/>
+          <ellipse cx="500" cy="250" rx="310" ry="128" transform="rotate(-4 500 250)"/>
+        </svg>
+        <img class="cubes__center" src="assets/firma.png" alt="" width="225" height="128">
+        <div class="cubes__stage" data-cubes-stage></div>
+        <p class="cubes__hint cubes__hint--l th-mono">Pasa por encima para desmontarlo · arrástralo para girarlo · clic para abrirlo</p>
+        <p class="cubes__hint cubes__hint--r th-mono">Desliza ↓</p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO (ref. twohalves.co "Let's make yours.") ============ -->
+    <section class="cta" id="contacto" aria-labelledby="cta-title">
+      <p class="th-eyebrow"><span class="th-rule"></span> Contacto</p>
+      <div class="cta__row">
+        <h2 class="s-title s-title--xl" id="cta-title">Hagamos <span class="ink" data-boil data-reveal>algo<svg class="ink__scribble" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13c30-7 62-9 96-6 26 2 50 0 98-5"/></svg></span> juntos :)</h2>
+      </div>
+      <div class="cta__row cta__row--b">
+        <p class="cta__text" data-reveal>Busco prácticas de empresa. Si tienes una marca, un envase o un cartel que necesita carácter, escríbeme y lo hacemos juntos.</p>
+        <a class="cta__btn" href="#" data-magnetic data-contact-mail>
+          <span class="cta__btn-in">Escríbeme <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+      <div class="cta__marquee" data-marquee aria-label="Proyectos">
+        <span class="cta__marquee-label th-mono">He hecho</span>
+        <div class="cta__marquee-window"><div class="cta__marquee-track" data-marquee-track></div></div>
+      </div>
+      <div class="cta__meta th-mono">
+        <a href="#" data-contact-mail data-contact-text></a>
+        <span>Almería <span data-clock>--:--</span></span>
+        <span>Respondo en español, inglés e italiano</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="foot__cols">
+      <p class="foot__blurb">Diseño cosas que se pueden tocar: marcas, tipografías, envases, collages, grabados y carteles. Desde Almería, para donde haga falta.</p>
+      <div><p class="foot__h th-mono">Explorar</p><a href="#inicio">Inicio</a><a href="#sobre-mi">Sobre mí</a><a href="#cubos">Proyectos</a><a href="#contacto">Contacto</a></div>
+      <div><p class="foot__h th-mono">Contacto</p><a href="#" data-contact-mail data-contact-text></a><a href="#" data-contact-ig hidden>Instagram</a></div>
+      <div><p class="foot__h th-mono">Estudio</p><span>Almería, España</span><span>Disponible para prácticas</span><span><span data-clock>--:--</span> GMT+1</span></div>
+    </div>
+    <p class="foot__giant" aria-label="Paula Verdú">Paula <span class="th-dim">Verdú</span><sup>™</sup></p>
+    <p class="foot__legal th-mono"><span>© 2026 Paula Verdú Carbonell</span><a href="#inicio">Volver arriba ↑</a></p>
+  </footer>
+
+
+
+  <!-- ============ PÁGINA DE PROYECTO (ref. Extrafazant) ============ -->
+  <div class="case" data-case role="dialog" aria-modal="true" aria-labelledby="case-title" tabindex="-1" hidden>
+    <div class="case__scroll" data-case-scroll>
+      <div class="case__layout">
+        <div class="case__text" data-case-text></div>
+        <div class="case__media" data-case-media aria-hidden="true">
+          <div class="case__frame">
+            <img alt="" data-case-img>
+            <img alt="" data-case-img>
+            <video class="case__vid" muted loop playsinline preload="none" data-case-vid></video>
+          </div>
+          <!-- Letra viva a sangre (ref. Klim) -->
+          <span class="klim-css" data-klim-fb aria-hidden="true">B</span>
+          <canvas class="case__klim" data-case-klim></canvas>
+          <div class="case__abc" data-case-abc></div>
+          <p class="case__counter label" data-case-counter></p>
+        </div>
+      </div>
+      <section class="case__more" data-case-more aria-label="Más proyectos"></section>
+    </div>
+    <button class="case__logo" type="button" data-case-close aria-label="Volver a proyectos">
+      <img src="assets/firma.png" alt="" width="225" height="128">
+    </button>
+    <button class="case__back" type="button" data-case-close aria-label="Volver a proyectos">←</button>
+  </div>
+
+  <!-- Transición entre pantallas: trazo azul con la V del logo -->
+  <div class="ptrans" data-ptrans aria-hidden="true">
+    <div class="ptrans__fill" data-ptrans-fill></div>
+    <svg class="ptrans__svg" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+      <path data-ptrans-path d="M-80 40 C 120 360, 330 760, 470 990 C 560 820, 760 380, 1080 -40 M -60 640 C 260 560, 640 470, 1070 420" />
+    </svg>
+    <img class="ptrans__logo" src="assets/firma.png" alt="" data-ptrans-logo>
+  </div>
+
+
+  <script src="js/loader.js?v=1795029619" defer></script>
+  <script src="js/main.js?v=1795029619" defer></script>
+  <script src="js/hero-scenes.js?v=1795029619" defer></script>
+  <script src="js/projects.js?v=1795029619" defer></script>
+  <script src="js/transition.js?v=1795029619" defer></script>
+  <script src="js/klim.js?v=1795029619" defer></script>
+  <script src="js/showcase.js?v=1795029619" defer></script>
+  <script src="js/patterns.js?v=1795029619" defer></script>
+  <script src="js/terraza.js?v=1795029619" defer></script>
+  <script src="js/theme.js?v=1795029619" defer></script>
+  <script src="js/aureas-art.js?v=1795029619" defer></script>
+  <script src="js/aureas.js?v=1795029619" defer></script>
+  <script src="js/case.js?v=1795029619" defer></script>
+  <script src="js/smooth.js?v=1795029619" defer></script>
+  <script src="js/twohalves.js?v=1795029619" defer></script>
+  <script src="js/cursor.js?v=1795029619" defer></script>
+  <script src="js/flight.js?v=1795029619" defer></script>
+</body>
+</html>
