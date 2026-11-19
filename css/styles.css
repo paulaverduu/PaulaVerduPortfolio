@@ -2247,3 +2247,6 @@ html.mode-anim body, html.mode-anim body * { transition: background-color .6s ea
   .au-hero__word { width: 40vw; }
   .tc-motto__title { font-size: 12vw; }
 }
+
+/* Sobre mí → Conectar: el email largo puede partirse en móviles estrechos */
+.me__link--mail { overflow-wrap: break-word; }
