@@ -170,13 +170,14 @@
   function showImage(p, k) {
     const n = Math.min(k, p.images.length - 1);
     const im = p.images[n];
-    if (im.full) return;
+    if (im.full) { hideKlim(); return; }
     showImage._t = (showImage._t || 0) + 1;      // cualquier cambio anula los anteriores pendientes            // va a pantalla completa: el panel derecho no cambia
     counter.textContent = `${pad(n + 1)} / ${pad(p.images.length)}`;
     view.classList.toggle("is-big", !!im.big);
     // cada diapositiva puede pedir su propio fondo
     view.style.setProperty("--accent", im.bg || p.color || "#f5f1e6");
     if (im.abc) {
+      hideKlim();
       frameVid.classList.remove("is-front"); frameVid.pause();
       frameImgs.forEach((i) => i.classList.remove("is-front"));
       return;
